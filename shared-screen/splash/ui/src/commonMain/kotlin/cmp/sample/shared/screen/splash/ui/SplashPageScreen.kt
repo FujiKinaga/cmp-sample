@@ -66,7 +66,6 @@ internal fun SplashPageScreen(
     Image(
       painter = painterResource(MppR.drawable.logo),
       contentDescription = stringResource(MppR.string.app_name),
-      colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurface),
       contentScale = ContentScale.FillWidth,
       modifier = Modifier.width(200.dp)
     )

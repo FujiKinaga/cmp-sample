@@ -2,9 +2,9 @@ package cmp.sample.shared.components
 
 import app.cash.molecule.RecompositionMode
 import cmp.sample.shared.data.core.domain.repositoryinterface.UserRepository
-import cmp.sample.shared.data.core.gateway.DefaultFeedApiGateway
 import cmp.sample.shared.data.core.gateway.DefaultPersistentKeyValueGateway
-import cmp.sample.shared.data.core.gateway.DefaultUsersApiGateway
+import cmp.sample.shared.data.core.gateway.FakeFeedApiGateway
+import cmp.sample.shared.data.core.gateway.FakeUserApiGateway
 import cmp.sample.shared.data.core.gatewayinterface.FeedApiGateway
 import cmp.sample.shared.data.core.gatewayinterface.PersistentKeyValueGateway
 import cmp.sample.shared.data.core.gatewayinterface.UsersApiGateway
@@ -102,16 +102,20 @@ class DefaultRootComponent(
     .build()
 
   private val usersApiGateway: UsersApiGateway by lazy {
-    DefaultUsersApiGateway(
-      usersApi = ktorfit.create(),
+    FakeUserApiGateway(
       persistentKeyValueGateway = persistentKeyValueGateway,
     )
+//    DefaultUsersApiGateway(
+//      usersApi = ktorfit.create(),
+//      persistentKeyValueGateway = persistentKeyValueGateway,
+//    )
   }
 
   private val feedApiGateway: FeedApiGateway by lazy {
-    DefaultFeedApiGateway(
-      feedApi = ktorfit.create(),
-    )
+    FakeFeedApiGateway()
+//    DefaultFeedApiGateway(
+//      feedApi = ktorfit.create(),
+//    )
   }
 
   private val userRepository: UserRepository = instanceKeeper.getOrCreate {
@@ -190,8 +194,14 @@ class DefaultRootComponent(
 
   @Serializable
   private sealed interface Config {
+
+    @Serializable
     data object Splash : Config
+
+    @Serializable
     data object Login : Config
+
+    @Serializable
     data object Main : Config
   }
 }

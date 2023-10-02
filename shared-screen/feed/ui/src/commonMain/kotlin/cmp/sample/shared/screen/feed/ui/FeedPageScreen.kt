@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -113,8 +114,8 @@ private fun TopBar(
     title = {
       Image(
         painter = painterResource(MppR.drawable.logo),
+        modifier = Modifier.size(52.dp),
         contentDescription = stringResource(MppR.string.app_name),
-        colorFilter = ColorFilter.tint(tintColor)
       )
     },
     navigationIcon = null,

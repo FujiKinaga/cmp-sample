@@ -9,7 +9,7 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 @Composable
 fun painterResource(id: Int): Painter {
   val resString = when (id) {
-    MppR.drawable.logo -> "compose-multiplatform.xml"
+    MppR.drawable.logo -> "logo.png"
     else -> TODO()
   }
   return org.jetbrains.compose.resources.painterResource(resString)
