@@ -10,7 +10,6 @@ class AndroidApplicationPlugin : Plugin<Project> {
         apply("cmp.primitive.kmp")
         apply("cmp.primitive.android.application")
         apply("cmp.primitive.compose")
-        apply("cmp.primitive.compose.tooling")
         apply("cmp.primitive.decompose")
         apply("cmp.primitive.spotless")
         apply("cmp.primitive.settings")

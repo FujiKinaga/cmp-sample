@@ -13,7 +13,6 @@ class KotlinMultiplatformSharedScreenUiPlugin : Plugin<Project> {
         apply("cmp.primitive.kmp.ios")
         apply("cmp.primitive.kmp.jetpack")
         apply("cmp.primitive.compose")
-        apply("cmp.primitive.compose.tooling")
         apply("cmp.primitive.decompose")
         apply("cmp.primitive.coil")
         apply("cmp.primitive.kamel")

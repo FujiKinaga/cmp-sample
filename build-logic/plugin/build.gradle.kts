@@ -141,6 +141,10 @@ gradlePlugin {
       id = "cmp.convention.kmp.shared.designsystem"
       implementationClass = "cmp.sample.convention.KotlinMultiplatformSharedDesignSystemPlugin"
     }
+    register("convention-kmp-shared-preview") {
+      id = "cmp.convention.kmp.shared.preview"
+      implementationClass = "cmp.sample.convention.KotlinMultiplatformSharedPreviewPlugin"
+    }
     register("convention-android-application") {
       id = "cmp.convention.android.application"
       implementationClass = "cmp.sample.convention.AndroidApplicationPlugin"

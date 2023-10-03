@@ -1,15 +1,15 @@
 package cmp.sample.primitive.plugin
 
+import cmp.sample.primitive.dsl.apply
+import cmp.sample.primitive.dsl.kotlin
+import cmp.sample.primitive.dsl.libs
+import cmp.sample.primitive.dsl.rootAndroid
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import cmp.sample.primitive.dsl.apply
-import cmp.sample.primitive.dsl.kotlin
-import cmp.sample.primitive.dsl.libs
-import cmp.sample.primitive.dsl.rootAndroid
 
 class AndroidApplicationPlugin : Plugin<Project> {
   @OptIn(ExperimentalKotlinGradlePluginApi::class)
@@ -48,6 +48,12 @@ class AndroidApplicationPlugin : Plugin<Project> {
             manifest.srcFile("src/androidMain/AndroidManifest.xml")
             res.srcDirs("src/androidMain/res")
           }
+        }
+        buildFeatures {
+          compose = true
+        }
+        composeOptions {
+          kotlinCompilerExtensionVersion = libs.versions.jetpackCompose.get()
         }
         defaultConfig {
           applicationId = "cmp.sample.android"

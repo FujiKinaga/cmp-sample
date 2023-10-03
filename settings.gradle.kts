@@ -63,3 +63,5 @@ include(":shared-data:core:datasource")
 include(":shared-data:core:apiclient")
 include(":shared-data:core:serviceinterface")
 include(":shared-data:core:service")
+
+include(":shared-preview")

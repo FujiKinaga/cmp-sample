@@ -11,7 +11,6 @@ class KotlinMultiplatformSharedDesignSystemPlugin : Plugin<Project> {
         apply("cmp.primitive.kmp.android")
         apply("cmp.primitive.kmp.ios")
         apply("cmp.primitive.compose")
-        apply("cmp.primitive.compose.tooling")
         apply("cmp.primitive.coil")
         apply("cmp.primitive.kamel")
         apply("cmp.primitive.spotless")

@@ -1,15 +1,15 @@
 package cmp.sample.primitive.plugin.kotlin
 
+import cmp.sample.primitive.dsl.android
+import cmp.sample.primitive.dsl.apply
+import cmp.sample.primitive.dsl.kotlin
+import cmp.sample.primitive.dsl.libs
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import cmp.sample.primitive.dsl.android
-import cmp.sample.primitive.dsl.apply
-import cmp.sample.primitive.dsl.kotlin
-import cmp.sample.primitive.dsl.libs
 
 class KotlinMultiplatformAndroidPlugin : Plugin<Project> {
 
@@ -48,6 +48,12 @@ class KotlinMultiplatformAndroidPlugin : Plugin<Project> {
         compileSdk = 34
         defaultConfig {
           minSdk = 24
+        }
+        buildFeatures {
+          compose = true
+        }
+        composeOptions {
+          kotlinCompilerExtensionVersion = libs.versions.jetpackCompose.get()
         }
         sourceSets {
           named("main") {
