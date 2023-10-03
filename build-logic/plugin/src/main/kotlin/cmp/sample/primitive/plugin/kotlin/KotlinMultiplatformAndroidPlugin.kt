@@ -49,12 +49,6 @@ class KotlinMultiplatformAndroidPlugin : Plugin<Project> {
         defaultConfig {
           minSdk = 24
         }
-        buildFeatures {
-          compose = true
-        }
-        composeOptions {
-          kotlinCompilerExtensionVersion = libs.versions.jetpackCompose.get()
-        }
         sourceSets {
           named("main") {
             manifest.srcFile("src/androidMain/AndroidManifest.xml")

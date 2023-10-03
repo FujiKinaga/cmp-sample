@@ -49,12 +49,6 @@ class AndroidApplicationPlugin : Plugin<Project> {
             res.srcDirs("src/androidMain/res")
           }
         }
-        buildFeatures {
-          compose = true
-        }
-        composeOptions {
-          kotlinCompilerExtensionVersion = libs.versions.jetpackCompose.get()
-        }
         defaultConfig {
           applicationId = "cmp.sample.android"
           minSdk = 24

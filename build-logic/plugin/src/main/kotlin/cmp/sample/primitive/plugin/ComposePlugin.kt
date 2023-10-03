@@ -26,8 +26,6 @@ class ComposePlugin : Plugin<Project> {
             implementation(compose.runtime)
             implementation(compose.runtimeSaveable)
             implementation(compose.ui)
-//            implementation(compose.uiTooling)
-//            implementation(compose.preview)
             implementation(compose.materialIconsExtended)
             implementation(compose.components.resources)
           }

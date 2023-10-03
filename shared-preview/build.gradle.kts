@@ -1,3 +1,5 @@
+import cmp.sample.primitive.dsl.libs
+
 plugins {
   id("cmp.convention.kmp.shared.preview")
 }
@@ -20,4 +22,11 @@ kotlin {
 
 android {
   namespace = "cmp.sample.shared.preview"
+
+  buildFeatures {
+    compose = true
+  }
+  composeOptions {
+    kotlinCompilerExtensionVersion = libs.versions.jetpackCompose.get()
+  }
 }

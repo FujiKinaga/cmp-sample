@@ -11,8 +11,8 @@ class ComposeToolingPlugin : Plugin<Project> {
       kotlin {
         sourceSets.getByName("androidMain") {
           dependencies {
-            api(compose.uiTooling)
-            api(compose.preview)
+            implementation(compose.uiTooling)
+            implementation(compose.preview)
           }
         }
 //        sourceSets.getByName("commonMain") {
