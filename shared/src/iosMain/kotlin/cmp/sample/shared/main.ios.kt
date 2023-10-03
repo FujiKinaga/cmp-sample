@@ -7,6 +7,7 @@ import app.cash.molecule.DisplayLinkClock
 import app.cash.molecule.RecompositionMode
 import cmp.sample.shared.components.DefaultRootComponent
 import cmp.sample.shared.designsystem.icon.CmpIcon
+import cmp.sample.shared.screen.core.ui.WebBrowser
 import com.arkivanov.decompose.DefaultComponentContext
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.extensions.compose.jetbrains.PredictiveBackGestureIcon
@@ -29,6 +30,7 @@ fun MainViewController(): UIViewController {
 
   val root =
     DefaultRootComponent(
+      browser = WebBrowser(),
       settings = factory.create("cmp-settings"),
       componentContext = DefaultComponentContext(
         lifecycle = lifecycle,

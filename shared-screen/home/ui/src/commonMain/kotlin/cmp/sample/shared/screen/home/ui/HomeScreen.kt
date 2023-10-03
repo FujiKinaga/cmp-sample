@@ -21,7 +21,6 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 @Composable
 fun HomeRoute(
   modifier: Modifier = Modifier,
-  paddingTop: Dp,
   component: HomeComponent
 ) {
   val stack by component.stack.subscribeAsState()
@@ -40,7 +39,6 @@ fun HomeRoute(
       when (val child = it.instance) {
         is HomeComponent.Child.FeedChild -> FeedPageRoute(
           component = child.component,
-          paddingTop = paddingTop,
           modifier = Modifier.fillMaxSize()
         )
       }

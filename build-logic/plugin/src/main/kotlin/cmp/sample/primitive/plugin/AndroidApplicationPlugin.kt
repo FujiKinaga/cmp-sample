@@ -27,6 +27,7 @@ class AndroidApplicationPlugin : Plugin<Project> {
           dependencies {
             implementation(project(":shared"))
             implementation(project(":shared-screen:splash:uilogic"))
+            implementation(project(":shared-screen:core:ui"))
             implementation(libs.androidx.appcompat)
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.core.ktx)

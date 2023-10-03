@@ -7,6 +7,7 @@ import androidx.core.view.WindowCompat
 import app.cash.molecule.AndroidUiDispatcher
 import cmp.sample.shared.MainView
 import cmp.sample.shared.components.DefaultRootComponent
+import cmp.sample.shared.screen.core.ui.WebBrowser
 import com.arkivanov.decompose.defaultComponentContext
 import com.russhwolf.settings.SharedPreferencesSettings
 import io.github.aakira.napier.DebugAntilog
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     val dataStore = SharedPreferencesSettings.Factory(applicationContext)
 
     val root = DefaultRootComponent(
+      browser = WebBrowser(this),
       settings = dataStore.create("cmp-settings"),
       componentContext = defaultComponentContext(),
       mainContext = AndroidUiDispatcher.Main,

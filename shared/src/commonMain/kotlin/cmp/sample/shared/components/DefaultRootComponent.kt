@@ -12,6 +12,7 @@ import cmp.sample.shared.data.core.repository.DefaultUserRepository
 import cmp.sample.shared.data.core.service.DefaultValidateEmailService
 import cmp.sample.shared.data.core.service.DefaultValidatePasswordService
 import cmp.sample.shared.httpClientEngineFactory
+import cmp.sample.shared.screen.core.ui.WebBrowser
 import cmp.sample.shared.screen.login.uilogic.LoginPageComponent
 import cmp.sample.shared.screen.login.usecase.DefaultLoginUseCase
 import cmp.sample.shared.screen.main.uilogic.MainComponent
@@ -46,6 +47,7 @@ import kotlinx.serialization.json.Json
 import kotlin.coroutines.CoroutineContext
 
 class DefaultRootComponent(
+  private val browser: WebBrowser,
   settings: ObservableSettings,
   componentContext: ComponentContext,
   private val mainContext: CoroutineContext,
@@ -186,6 +188,7 @@ class DefaultRootComponent(
 
   private fun mainComponent(componentContext: ComponentContext): MainComponent =
     DefaultMainComponent(
+      browser = browser,
       feedApiGateway = feedApiGateway,
       componentContext = componentContext,
       mainContext = mainContext,

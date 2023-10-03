@@ -11,12 +11,10 @@ class DefaultFeedUseCase(
   private val feedPagingGateway: FeedPagingGateway,
 ) : FeedUseCase {
 
-  private val pager = Pager<String, Feed>(
+  private val pager = Pager(
     config = FeedPagingGateway.pagingConfig,
     initialKey = null,
-    pagingSourceFactory = {
-      feedPagingGateway
-    }
+    pagingSourceFactory = ::feedPagingGateway
   )
 
   override fun display(): Flow<PagingData<Feed>> = pager.flow

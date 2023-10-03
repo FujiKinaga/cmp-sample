@@ -3,6 +3,7 @@ package cmp.sample.shared.components
 import app.cash.molecule.RecompositionMode
 import cmp.sample.shared.data.core.gateway.DefaultFeedPagingGateway
 import cmp.sample.shared.data.core.gatewayinterface.FeedApiGateway
+import cmp.sample.shared.screen.core.ui.WebBrowser
 import cmp.sample.shared.screen.feed.uilogic.FeedPageComponent
 import cmp.sample.shared.screen.feed.usecase.DefaultFeedUseCase
 import cmp.sample.shared.screen.home.uilogic.HomeComponent
@@ -16,6 +17,7 @@ import kotlinx.serialization.Serializable
 import kotlin.coroutines.CoroutineContext
 
 class DefaultHomeComponent(
+  private val browser: WebBrowser,
   private val feedApiGateway: FeedApiGateway,
   componentContext: ComponentContext,
   private val mainContext: CoroutineContext,
@@ -59,6 +61,9 @@ class DefaultHomeComponent(
       feedUseCase = DefaultFeedUseCase(gateway),
       mainContext = mainContext,
       recompositionMode = recompositionMode,
+      onItemClick = {
+        browser.open("https://github.com/JetBrains/compose-multiplatform")
+      }
     )
   }
 

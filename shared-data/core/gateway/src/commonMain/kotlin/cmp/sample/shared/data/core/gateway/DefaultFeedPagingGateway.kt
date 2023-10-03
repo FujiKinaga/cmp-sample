@@ -21,14 +21,12 @@ class DefaultFeedPagingGateway(
         onSuccess = {
           PagingSourceLoadResultPage(
             data = it,
-            prevKey = null, // Only paging forward.
+            prevKey = null,
             nextKey = if (it.size < params.loadSize) null else it.lastOrNull()?.id?.value,
-          ) as PagingSourceLoadResult<String, Feed>
+          )
         },
         onFailure = {
-          PagingSourceLoadResultError<String, Feed>(
-            it,
-          ) as PagingSourceLoadResult<String, Feed>
+          PagingSourceLoadResultError(it)
         },
       )
   }

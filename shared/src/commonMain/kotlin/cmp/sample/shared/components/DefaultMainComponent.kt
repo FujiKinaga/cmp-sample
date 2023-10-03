@@ -2,6 +2,7 @@ package cmp.sample.shared.components
 
 import app.cash.molecule.RecompositionMode
 import cmp.sample.shared.data.core.gatewayinterface.FeedApiGateway
+import cmp.sample.shared.screen.core.ui.WebBrowser
 import cmp.sample.shared.screen.home.uilogic.HomeComponent
 import cmp.sample.shared.screen.main.uilogic.MainComponent
 import com.arkivanov.decompose.ComponentContext
@@ -14,6 +15,7 @@ import kotlinx.serialization.Serializable
 import kotlin.coroutines.CoroutineContext
 
 class DefaultMainComponent(
+  private val browser: WebBrowser,
   private val feedApiGateway: FeedApiGateway,
   componentContext: ComponentContext,
   private val mainContext: CoroutineContext,
@@ -52,6 +54,7 @@ class DefaultMainComponent(
     config: Config.Home,
   ): HomeComponent =
     DefaultHomeComponent(
+      browser = browser,
       feedApiGateway = feedApiGateway,
       componentContext = componentContext,
       mainContext = mainContext,

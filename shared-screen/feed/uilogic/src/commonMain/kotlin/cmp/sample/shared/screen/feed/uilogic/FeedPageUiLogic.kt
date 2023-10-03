@@ -17,7 +17,8 @@ import kotlin.coroutines.CoroutineContext
 class FeedPageUiLogic(
   useCase: FeedUseCase,
   mainContext: CoroutineContext,
-  recompositionMode: RecompositionMode
+  recompositionMode: RecompositionMode,
+  private val onItemClick: (FeedPageIdUiModel) -> Unit,
 ) : InstanceKeeper.Instance {
 
   private val scope = CoroutineScope(mainContext + SupervisorJob())
@@ -30,7 +31,7 @@ class FeedPageUiLogic(
       .cachedIn(scope)
 
   fun onItemClick(id: FeedPageIdUiModel) {
-    // TODO: OpenBrowser
+    onItemClick.invoke(id)
   }
 
   override fun onDestroy() {
