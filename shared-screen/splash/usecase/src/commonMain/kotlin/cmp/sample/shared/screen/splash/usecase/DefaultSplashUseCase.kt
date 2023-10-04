@@ -26,6 +26,6 @@ class DefaultSplashUseCase(
         )
     }
     delay(1500)
-    return Result.success(true)
+    return Result.success(false)
   }
 }

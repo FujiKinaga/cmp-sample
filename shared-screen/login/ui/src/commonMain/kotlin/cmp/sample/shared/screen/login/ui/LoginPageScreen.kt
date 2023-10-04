@@ -45,7 +45,6 @@ import cmp.sample.shared.designsystem.component.Button
 import cmp.sample.shared.designsystem.component.CircularProgressbar
 import cmp.sample.shared.designsystem.component.Header
 import cmp.sample.shared.designsystem.component.TextField
-import cmp.sample.shared.designsystem.icon.CmpIcon
 import cmp.sample.shared.screen.login.uilogic.LoginPageComponent
 import cmp.sample.shared.screen.login.uilogic.LoginPageUiModel
 
@@ -117,8 +116,8 @@ internal fun LoginPageScreen(
             style = MaterialTheme.typography.titleLarge,
           )
         },
-        navigationIcon = CmpIcon.ArrowBack,
-        navigationIconContentDescription = "戻る",
+        navigationIcon = null,
+        navigationIconContentDescription = null,
         actionIcon = null,
         actionIconContentDescription = null,
         modifier = Modifier.fillMaxWidth(),
