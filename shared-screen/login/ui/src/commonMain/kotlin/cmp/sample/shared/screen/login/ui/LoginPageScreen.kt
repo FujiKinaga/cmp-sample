@@ -24,7 +24,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -87,8 +90,8 @@ internal fun LoginPageScreen(
   val focusManager = LocalFocusManager.current
   val (first, second) = remember { FocusRequester.createRefs() }
   val keyboardController = LocalSoftwareKeyboardController.current
-  var localEmail = model.email
-  var localPassword = model.password
+  var localEmail by rememberSaveable { mutableStateOf("") }
+  var localPassword by rememberSaveable { mutableStateOf("") }
 
   LaunchedEffect(Unit) {
     first.requestFocus()
@@ -139,7 +142,7 @@ internal fun LoginPageScreen(
       Spacer(modifier = Modifier.height(24.dp))
 
       TextField(
-        value = localEmail.orEmpty(),
+        value = localEmail,
         placeholder = {
           Text(
             text = "メールアドレスを入力",
@@ -176,7 +179,7 @@ internal fun LoginPageScreen(
       )
 
       TextField(
-        value = localPassword.orEmpty(),
+        value = localPassword,
         placeholder = {
           Text(
             text = "パスワードを入力",
