@@ -12,6 +12,7 @@ class PagingUiPlugin : Plugin<Project> {
         sourceSets.getByName("commonMain") {
           dependencies {
             implementation(libs.paging.compose.common)
+            implementation(libs.androidx.paging.common)
           }
         }
         sourceSets.getByName("androidMain") {
