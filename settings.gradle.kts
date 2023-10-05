@@ -1,7 +1,6 @@
 pluginManagement {
   includeBuild("build-logic")
   repositories {
-    gradlePluginPortal()
     google {
       content {
         includeGroupByRegex("androidx.*")
@@ -9,8 +8,9 @@ pluginManagement {
         includeGroupByRegex("com\\.google.*")
       }
     }
-    mavenCentral()
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    gradlePluginPortal()
+    mavenCentral()
   }
 }
 dependencyResolutionManagement {
@@ -23,9 +23,8 @@ dependencyResolutionManagement {
         includeGroupByRegex("com\\.google.*")
       }
     }
-    mavenCentral()
-    gradlePluginPortal()
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    mavenCentral()
     maven { url = uri("https://jitpack.io") }
   }
 }

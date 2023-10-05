@@ -1,6 +1,13 @@
 dependencyResolutionManagement {
   repositories {
-    google()
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    google {
+      content {
+        includeGroupByRegex("androidx.*")
+        includeGroupByRegex("com\\.android.*")
+        includeGroupByRegex("com\\.google.*")
+      }
+    }
     mavenCentral()
   }
   versionCatalogs {

@@ -1,12 +1,3 @@
-buildscript {
-  repositories {
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-    gradlePluginPortal()
-    google()
-  }
-
-}
-
 plugins {
   alias(libs.plugins.android.application) apply false
   alias(libs.plugins.android.library) apply false
