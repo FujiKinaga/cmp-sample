@@ -19,8 +19,6 @@ fun PreviewLoginScreen() {
       component = object : LoginPageComponent {
         override val uiModel = MutableStateFlow(
           LoginPageUiModel(
-            email = null,
-            password = null,
             errorMessage = null,
             isButtonEnabled = false,
             showProgressbar = false,
