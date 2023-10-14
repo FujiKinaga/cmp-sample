@@ -21,12 +21,6 @@ class ComposeToolingPlugin : Plugin<Project> {
 //            api(compose.preview)
 //          }
 //        }
-//        sourceSets.getByName("desktopMain") {
-//          dependencies {
-//            // implementation(libs.findLibrary("jetbrains-compose-ui-tooling").get())
-//            api(libs.findLibrary("jetbrains-compose-ui-tooling-preview").get())
-//          }
-//        }
       }
     }
   }

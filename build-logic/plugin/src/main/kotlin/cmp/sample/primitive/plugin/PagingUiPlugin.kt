@@ -21,11 +21,11 @@ class PagingUiPlugin : Plugin<Project> {
             implementation(libs.androidx.paging.compose)
           }
         }
-        sourceSets.getByName("iosMain") {
-          dependencies {
-            implementation(libs.paging.runtime.uikit)
-          }
-        }
+//        sourceSets.getByName("iosMain") {
+//          dependencies {
+//            implementation(libs.paging.runtime.uikit)
+//          }
+//        }
       }
     }
   }

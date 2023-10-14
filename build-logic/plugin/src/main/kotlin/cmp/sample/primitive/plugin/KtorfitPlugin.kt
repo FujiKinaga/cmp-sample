@@ -42,9 +42,6 @@ class KtorfitPlugin : Plugin<Project> {
           "kspIosX64",
           "kspIosArm64",
           "kspIosSimulatorArm64",
-//          "kspDesktop",
-//          "kspJs",
-//          "kspWasm",
         ).forEach {
           add(it, libs.ktorfit.ksp)
         }

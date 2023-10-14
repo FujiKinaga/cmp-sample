@@ -8,12 +8,10 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class KotlinMultiplatformAndroidPlugin : Plugin<Project> {
 
-  @OptIn(ExperimentalKotlinGradlePluginApi::class)
   override fun apply(target: Project) {
     with(target) {
       with(pluginManager) {
@@ -22,8 +20,6 @@ class KotlinMultiplatformAndroidPlugin : Plugin<Project> {
       }
 
       kotlin {
-        targetHierarchy.default()
-
         androidTarget {
           compilations.all {
             kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()

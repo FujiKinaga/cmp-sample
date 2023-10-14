@@ -8,11 +8,9 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class AndroidApplicationPlugin : Plugin<Project> {
-  @OptIn(ExperimentalKotlinGradlePluginApi::class)
   override fun apply(target: Project) {
     with(target) {
       with(pluginManager) {
@@ -20,8 +18,6 @@ class AndroidApplicationPlugin : Plugin<Project> {
       }
 
       kotlin {
-        targetHierarchy.default()
-
         androidTarget()
         sourceSets.getByName("androidMain") {
           dependencies {
